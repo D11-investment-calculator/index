@@ -151,8 +151,8 @@ input[type=file]::file-selector-button:hover {
    console.log("Won A Contest"+ countC );
    console.log("Won A Contest %"+ parseFloat(countC*100/countJ).toFixed(2));
   let won_percentage = parseFloat(countC*100/countJ).toFixed(2);
-   document.getElementById("Deposited").innerHTML = sum;
-   document.getElementById("withdrew").innerHTML = sumW;
+   document.getElementById("Deposited").innerHTML = parseFloat(sum).toFixed(2);
+   document.getElementById("withdrew").innerHTML = parseFloat(sumW).toFixed(2);
    document.getElementById("Joined").innerHTML = countJ;
    document.getElementById("Loss").innerHTML = loss;
    document.getElementById("Win").innerHTML = won_percentage;
