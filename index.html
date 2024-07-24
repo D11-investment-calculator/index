@@ -49,6 +49,9 @@
         #contact {
             padding: 20px;
         }
+        #contact {
+            font-size: medium;
+        }
 
         canvas {
             max-width: 400px;
@@ -175,8 +178,8 @@
 </head>
 
 <body>
-    <h1 style="text-align: center;color:rgb(255, 0, 0) (243, 26, 48); font-family:cursive;">Dream11 Investment
-        Calculator</h1>
+    <h1 style="text-align: center;color:rgb(255, 0, 0) (243, 26, 48); font-family:cursive;"><b>Dream11 Investment
+        Calculator</b></h1>
     <nav class="navbar">
         <ul>
             <li><a href="#home" onclick="openHome()" active>Home</a></li>
@@ -209,12 +212,12 @@
                     <span id="Win">0%</span><span>%</span><br><br>
                     <i class="fas fa-wallet icon"></i>
                     <h2>Withdrew Cash</h2>
-                    <span id="withdrew">0</span><br>
+                    <span id="withdrew">0</span><br><br>
                     <div>
 
-                        <h2 style="font-weight: bold;font-size: large;">Total <span id="lossitem"
-                                style="color: #000000;">Loss</span>:</h2>
-                        <span id="Loss">0</span><br>
+                        <h2 style="font-weight: bold;font-size: large;"><span id="lossitem"
+                                style="color: #000000;">LOSS</span></h2>
+                        <span id="Loss">0</span>
                     </div>
                 </div>
             </div>
@@ -226,11 +229,11 @@
         </div>
     </div>
     <canvas id="myPieChart" style="display: none;"></canvas>
-    <span id="wonandloss" style="text-align: center;"></span>
-    <div id="contact" style="display: none;">
+    <span id="wonandloss" style="color:Green;font-size:20px;"></span>
+    <div id="contact" style="display: none; font-size: large;">
         <h1>Contact Us</h1>
         <p>Feel free to reach out to us!</p>
-        <p>Mail us at: <a href="mailto:sathish.seetha99@gmail.com">sathish.seetha99@gmail.com</a></p>
+        <p>Mail us at: <a href="mailto:sathish.seetha99@gmail.com" >sathish.seetha99@gmail.com</a></p>
     </div>
     <script>
         document.getElementById('fileInput').addEventListener('change', handleFile);
@@ -295,7 +298,7 @@
             let loss = parseFloat(sum - sumW).toFixed(2);
             document.getElementById('Loss').style.color = "red";
             if (loss <= 0) {
-                document.getElementById('lossitem').innerText = 'Profit';
+                document.getElementById('lossitem').innerText = 'PROFIT';
                 loss = loss.slice(1);
                 document.getElementById('Loss').style.color = "Green";
             }
@@ -312,7 +315,7 @@
                 document.getElementById("Joined").innerHTML = countJ;
                 document.getElementById("Loss").innerHTML = loss;
                 document.getElementById("Win").innerHTML = won_percentage;
-                document.getElementById("wonandloss").innerHTML = 'Contests Won: ' + won_percentage + '%' + '<br>' + 'Contests Loss: ' + lossper + '%';
+                document.getElementById("wonandloss").innerHTML = 'Contests Won:' + won_percentage + '%' + '<br>' + 'Contests Loss:' + lossper + '%';
                 const ctx = document.getElementById('myPieChart').getContext('2d');
                 const myPieChart = new Chart(ctx, {
                     type: 'pie',
